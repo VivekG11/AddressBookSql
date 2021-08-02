@@ -18,3 +18,4 @@ select *from Addressbooktable;
 
 insert into Addressbooktable values('Vivek','Guntuku','Manthani','pdpl','telangana',505284,'73366','vivek13@gmail.com'),('Pavani','ch','kdp','vzg','Ap',589384,'99599','vivek13@gmail.com'),('Kumar','Guntuku','Manugur','knr','telangana',505184,'75686','kumar35@gmail.com'),('Aditya','sirangi','mdp','sirl','mh',535684,'737866','aditya12@gmail.com');
 
+update Addressbooktable set email = 'pavani21@gmail.com' where FirstName = 'pavani';
