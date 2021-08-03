@@ -38,3 +38,11 @@ select * from Addressbooktable order by (FirstName) ;
 select * from Addressbooktable order by (city) ;
 
 select * from Addressbooktable order by (FirstName) Desc;
+
+alter table Addressbooktable add AddressBookName varchar(100), Type varchar(50); 
+
+select *from Addressbooktable;
+
+update Addressbooktable set AddressBookName = 'Friends' , Type = 'Friend' where FirstName = 'Vivek' or FirstName = 'Kumar';
+
+update Addressbooktable set AddressBookName = 'Family' , Type = 'Cousin' where FirstName = 'Pavani' or FirstName = 'Aditya';
