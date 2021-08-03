@@ -46,3 +46,8 @@ select *from Addressbooktable;
 update Addressbooktable set AddressBookName = 'Friends' , Type = 'Friend' where FirstName = 'Vivek' or FirstName = 'Kumar';
 
 update Addressbooktable set AddressBookName = 'Family' , Type = 'Cousin' where FirstName = 'Pavani' or FirstName = 'Aditya';
+
+select count(Firstname) as count1 from Addressbooktable where Type = 'Friend';
+
+
+select count(Firstname) as count2 from Addressbooktable where Type = 'Cousin';
