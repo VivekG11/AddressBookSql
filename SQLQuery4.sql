@@ -29,3 +29,5 @@ use AddressBook;
 select FirstName , city from Addressbooktable where city = 'pdpl';
 
 select FirstName , state from Addressbooktable where state = 'telangana';
+
+select count(FirstName) as BookSize from Addressbooktable;
