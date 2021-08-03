@@ -31,3 +31,10 @@ select FirstName , city from Addressbooktable where city = 'pdpl';
 select FirstName , state from Addressbooktable where state = 'telangana';
 
 select count(FirstName) as BookSize from Addressbooktable;
+
+select * from Addressbooktable order by (FirstName) ;
+
+
+select * from Addressbooktable order by (city) ;
+
+select * from Addressbooktable order by (FirstName) Desc;
