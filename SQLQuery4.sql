@@ -24,4 +24,8 @@ insert into Addressbooktable values('Vinay','Gondra','dlsk','hyd','telangana',50
 
 Delete from Addressbooktable where FirstName = 'vinay';
 
-select * from Addressbooktable;
+use AddressBook;
+
+select FirstName , city from Addressbooktable where city = 'pdpl';
+
+select FirstName , state from Addressbooktable where state = 'telangana';
