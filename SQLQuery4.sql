@@ -103,11 +103,39 @@ select * from ContactType;
 
 create table Relation(
 ContId int foreign key references ContactPerson(ContactId),
-Type_Id int foreign key References ContactType(TypeId));
+TypId int foreign key References ContactType(TypeId));
 
 select * from Relation;
 
 insert into Relation values (3,1),(4,2),(5,1),(6,2);
 
+select BookName, FirstName,LastName,address,city,state,Zip,PhoneNumber,email,TypeName
+from ContactBook 
+FULL JOIN ContactPerson on ContactBook.AddressBookId = ContactPerson.BookId
+FULL JOIN Relation on Relation.ContId = ContactPerson.ContactId
+FULL JOIN ContactType on Relation.TypId = ContactType.TypeId
 
+------- Retrieving data based on state-----------
+select BookName, FirstName,LastName,address,city,state,Zip,PhoneNumber,email,TypeName
+from ContactBook 
+INNER JOIN ContactPerson on ContactBook.AddressBookId = ContactPerson.BookId and (state = 'Telangana')
+INNER JOIN Relation on Relation.ContId = ContactPerson.ContactId
+INNER JOIN ContactType on Relation.TypId = ContactType.TypeId
+
+----------Retrieving Data based on city-----------
+
+select BookName, FirstName,LastName,address,city,state,Zip,PhoneNumber,email,TypeName
+from ContactBook 
+INNER JOIN ContactPerson on ContactBook.AddressBookId = ContactPerson.BookId and (city = 'Karimnagar')
+INNER JOIN Relation on Relation.ContId = ContactPerson.ContactId
+INNER JOIN ContactType on Relation.TypId = ContactType.TypeId
+
+--------Retrieving data after sorting alphabetically-------
+
+select BookName, FirstName,LastName,address,city,state,Zip,PhoneNumber,email,TypeName
+from ContactBook 
+INNER JOIN ContactPerson on ContactBook.AddressBookId = ContactPerson.BookId 
+INNER JOIN Relation on Relation.ContId = ContactPerson.ContactId
+INNER JOIN ContactType on Relation.TypId = ContactType.TypeId
+order by (FirstName)
 
