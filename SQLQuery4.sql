@@ -56,3 +56,58 @@ insert into Addressbooktable values('Vivek','G','Bhpl','Warangal','Telangana',60
 
 select * from Addressbooktable;
 -------UC11-------------------
+
+------Creating Table for contact Book Entity-------
+
+create table ContactBook(
+AddressBookId int identity(1,1) primary key,
+BookName varchar(100));
+
+Insert into ContactBook values ('Family'),('Friends');
+
+select * from ContactBook;
+
+------Creating table for contacts------------
+
+create table ContactPerson (
+BookId int FOREIGN KEY REFERENCES ContactBook(AddressBookId),
+ContactId int identity(1,1) primary key,
+FirstName varchar(150),
+LastName varchar(150),
+address varchar(200),
+city varchar(100),
+state varchar(100),
+Zip bigint,
+PhoneNumber varchar(250),
+email varchar(300));
+
+select * from ContactPerson;
+
+set identity_insert ContactPerson OFF;
+
+insert into ContactPerson values (2,'Vivek','G','Bhpl','karimnagar','Telangana',60011,'97009149','vivekg11@gmail.com')
+
+insert into ContactPerson values (2,'kumar','B','hnk','Hanamkonda','Telangana',62021,'97735749','Kumar671@gmail.com'),(1,'Rupa','M','Kdp','seema','Ap',50505,'96762940','rupa13@gmail.com'),(1,'shiva','s','LB Nagar','Ongole','Mh',34562,'987462','SShiva45@gmail.com');
+
+select * from ContactPerson;
+
+----------Creating table for contact Type-------
+
+create table ContactType(
+TypeId int identity(1,1) primary key,
+TypeName varchar(150));
+
+insert into ContactType values ('Family'),('Friends');
+
+select * from ContactType;
+
+create table Relation(
+ContId int foreign key references ContactPerson(ContactId),
+Type_Id int foreign key References ContactType(TypeId));
+
+select * from Relation;
+
+insert into Relation values (3,1),(4,2),(5,1),(6,2);
+
+
+
