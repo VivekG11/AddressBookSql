@@ -51,3 +51,8 @@ select count(Firstname) as count1 from Addressbooktable where Type = 'Friend';
 
 
 select count(Firstname) as count2 from Addressbooktable where Type = 'Cousin';
+
+insert into Addressbooktable values('Vivek','G','Bhpl','Warangal','Telangana',600119,'97009','Vivek11@gamil.com','Family','Brother');
+
+select * from Addressbooktable;
+-------UC11-------------------
